@@ -12,17 +12,33 @@ package Estrategias;
 public abstract class Estrategia {
     
     //modo de busqueda 0->Seek; 1->Destroy
-    int modo;
+    int sizeX,sizeY;
     int[][] oponente;
     int[][] miTablero;
-    boolean lastShootHit, init;
+    boolean lastShootHit, init,done=false;;
     int lastShootX=0,lastShootY=0;
     public Estrategia(){
         lastShootHit=false;
         init=false;
-        modo=0;
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
+        sizeX=100;
+        sizeY=100;
+        oponente=new int[sizeX][sizeY];
+        miTablero=new int[sizeX][sizeY];
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < 100; j++) {
+                oponente[i][j]=0;
+                miTablero[i][j]=0;
+            }
+        }
+        
+    }
+    public Estrategia(int x, int y){
+        lastShootHit=false;
+        init=false;
+        oponente=new int[x][y];
+        miTablero=new int[x][y];
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y; j++) {
                 oponente[i][j]=0;
                 miTablero[i][j]=0;
             }
@@ -30,15 +46,16 @@ public abstract class Estrategia {
         
     }
     
-    public abstract int[] siguiente();
+    public abstract int[] siguientePunto(boolean impactoAnterior);
+   
     
-    private void toSeek(){
-        modo=0;
-    }
-    private void toDestroy(){
-        modo=1;
+    public boolean isDone(){
+        return done;
     }
     
+    public void done(){
+        done=true;
+    }
     
     
 }

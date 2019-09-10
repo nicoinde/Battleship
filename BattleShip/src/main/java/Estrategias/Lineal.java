@@ -11,6 +11,7 @@ package Estrategias;
  */
 public class Lineal extends Estrategia{
 
+    
     public Lineal() {
         super();
     }
@@ -18,18 +19,34 @@ public class Lineal extends Estrategia{
     
     
     @Override
-    public int[] siguiente() {
+    public int[] siguientePunto(boolean impactoAnterior) {
         int[] coord =new int[2];
         if (!init) {
             coord[0]=0;
             coord[1]=0;
-        } else {
-            
+            init=true;
+            oponente[coord[0]][coord[1]]=1;
+            return coord;
         }
         
-        
+        if(lastShootY<sizeY-1){
+            lastShootY++;
+        } else{
+            if(lastShootX<sizeX-1){
+                lastShootX++;
+                lastShootY=0;
+            } else{
+                done=true;
+            }
+            
+        }
+        coord[0]=lastShootX;
+        coord[1]=lastShootY;
+        oponente[coord[0]][coord[1]]=1;
         return coord;
     }
+    
+    
     
     
 }
