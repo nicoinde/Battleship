@@ -5,10 +5,20 @@
  */
 package Logica;
 
+import Estrategias.*;
+
 /**
  *
  * @author Nico
  */
 public class Partida {
+    
+    Estrategia player1, player2;
+    int shotPlayer1,shotPlayer2,successPlayer1,successPlayer2;
+    Tablero tabPlayer1,tabPlayer2;
+    Barco[] barcosPlayer1,barcosPlayer2;
+    
+    
+    
     
 }

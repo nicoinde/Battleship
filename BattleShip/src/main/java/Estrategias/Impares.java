@@ -48,12 +48,17 @@ public class Impares extends Estrategia{
             auxX = (int) (Math.random() * sizeX);
             auxY = (int) (Math.random() * sizeY);
         } while ((auxX+auxY)%2==1 && oponente[auxX][auxY] == 1);
-
+        
+        lastShootX=auxY;
+        lastShootY=auxY;
         coord[0] = auxX;
         coord[1] = auxY;
         oponente[coord[0]][coord[1]] = 1;
         } else{
             coord=puntosDeInteres.remove(0);
+            lastShootX=coord[0];
+            lastShootY=coord[1];
+            oponente[coord[0]][coord[1]] = 1;
         }
         
         return coord;
