@@ -17,8 +17,11 @@ public class Partida {
     int shotPlayer1,shotPlayer2,successPlayer1,successPlayer2;
     Tablero tabPlayer1,tabPlayer2;
     Barco[] barcosPlayer1,barcosPlayer2;
+
     
-    
+    public void laMierda(){
+        
+    }
     
     
 }
