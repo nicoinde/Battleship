@@ -11,7 +11,7 @@ package Logica;
  */
 public class Tablero {
 
-    static int TAMAÑO_TABLERO;
+    static int TAMAÑO_TABLERO=100;
     private Celda[][] tablero;
     private boolean derrota;
 
@@ -22,9 +22,9 @@ public class Tablero {
 
     public Tablero() {
         tablero = new Celda[TAMAÑO_TABLERO][TAMAÑO_TABLERO];
-        for (Celda[] fila : tablero) {
-            for (Celda celda : fila) {
-                celda = new Celda();
+        for(int i=0;i<TAMAÑO_TABLERO;i++){
+            for(int j=0;j<TAMAÑO_TABLERO;j++){
+                tablero[i][j]=new Celda();
             }
         }
         derrota = false;

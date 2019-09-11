@@ -11,13 +11,23 @@ package Estrategias;
  */
 public class DumbRandom extends Estrategia {
 
+    public DumbRandom() {
+        super();
+    }
+
+    public DumbRandom(int x, int y) {
+        super(x, y);
+    }
+
+    
+    
     @Override
     public int[] siguientePunto(boolean impactoAnterior) {
         int[] coord = new int[2];
         int auxX = 0, auxY = 0;
         do {
-            auxX = (int) Math.random() * sizeX;
-            auxY = (int) Math.random() * sizeY;
+            auxX = (int) (Math.random() * sizeX);
+            auxY = (int) (Math.random() * sizeY);
         } while (oponente[auxX][auxY] == 1);
 
         coord[0] = auxX;

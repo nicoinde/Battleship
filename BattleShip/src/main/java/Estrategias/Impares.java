@@ -14,6 +14,14 @@ import java.util.ArrayList;
 public class Impares extends Estrategia{
 
     private ArrayList<int[]> puntosDeInteres=new ArrayList();
+
+    public Impares() {
+        super();
+    }
+
+    public Impares(int x, int y) {
+        super(x, y);
+    }
     
     
     @Override

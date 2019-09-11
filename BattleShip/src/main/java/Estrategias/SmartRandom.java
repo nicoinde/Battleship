@@ -14,6 +14,11 @@ import java.util.*;
 public class SmartRandom extends DumbRandom{
 
     private ArrayList<int[]> puntosDeInteres=new ArrayList();
+
+    public SmartRandom() {
+        super();
+    }
+    
     
     
     @Override

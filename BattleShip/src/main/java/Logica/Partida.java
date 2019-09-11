@@ -88,6 +88,8 @@ public class Partida {
 
     public void ponerBarcos(Tablero tabPlayer1, Tablero tabPlayer2) {
         Random rnd = new Random();
+        barcosPlayer1= new Barco[10];
+        barcosPlayer2= new Barco[10];
         int cont = 0;
         for (int i = 2; i <= 6; i++) {
             for (int j = 1; j <= 2; j++) {
@@ -118,9 +120,9 @@ public class Partida {
                 finished=true;
                 ganador=0;
             }
-            player1.siguientePunto(imp1);
+            ultPlayer1=player1.siguientePunto(imp1);
             imp2 = tabPlayer1.impacto(ultPlayer2[0], ultPlayer2[1]);
-            player2.siguientePunto(imp2);
+            ultPlayer2=player2.siguientePunto(imp2);
 
             if (imp2) {
                 impactos2++;
