@@ -24,7 +24,7 @@ public class Celda {
     private boolean chosen;
 
     public Celda() {
-        actual=estado.Nuevo;
+        actual=estado.Agua;
         chosen=false;
     }
     public Celda(estado est) {

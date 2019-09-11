@@ -47,7 +47,7 @@ public class Impares extends Estrategia{
         do {
             auxX = (int) (Math.random() * sizeX);
             auxY = (int) (Math.random() * sizeY);
-        } while ((auxX+auxY)%2==1 && oponente[auxX][auxY] == 1);
+        } while ((auxX+auxY)%2==0 && oponente[auxX][auxY] == 1);
         
         lastShootX=auxY;
         lastShootY=auxY;

@@ -18,7 +18,25 @@ public class SmartRandom extends DumbRandom{
     
     @Override
     public int[] siguientePunto(boolean impactoAnterior) {
+        
         int[] coord= new int [2];
+        if(!init){
+            int auxX = 0, auxY = 0;
+        do {
+            auxX = (int) (Math.random() * sizeX);
+            auxY = (int) (Math.random() * sizeY);
+        } while (oponente[auxX][auxY] == 1);
+
+        lastShootX=auxX;
+        lastShootY=auxY;
+        
+        coord[0] = auxX;
+        coord[1] = auxY;
+        oponente[coord[0]][coord[1]] = 1;
+        init=false;
+        return coord;
+        }
+        
         if(impactoAnterior){
             if(oponente[lastShootX-1][lastShootY]==0){
                 coord[0]=lastShootX-1;

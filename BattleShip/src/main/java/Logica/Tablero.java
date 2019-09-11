@@ -57,7 +57,19 @@ public class Tablero {
         }
         return ok;
     }
+    
+    public Celda[][] getTablero(){
+        return tablero;
+    }
 
+    public boolean impacto(int x, int y){
+        
+        if(tablero[x][y].getActual().toString()=="Agua"){
+            return false;
+        }
+        tablero[x][y].setTocado();
+        return true;
+    }
     /*opcion para regla de no//<editor-fold defaultstate="collapsed" desc="comment">
     contacto entre botes
     
@@ -242,14 +254,17 @@ public class Tablero {
     return ok;
     } */
 //</editor-fold>
-    public boolean ubicarBarco(Barco bote, int[] pos) {
+    public int[] ubicarBarco(Barco bote) {
         boolean ok = true;
+        int tamaño = bote.getTamaño();
+        int pos[] = new int[2];
+        do {
+            pos[0] = (int) (Math.random() * TAMAÑO_TABLERO);
+            pos[1] = (int) (Math.random() * TAMAÑO_TABLERO);
+        } while (!hayEspacio(pos, bote.getTamaño(), bote.isHorizontal()));
         int x = pos[0];
         int y = pos[1];
-        int tamaño = bote.getTamaño();
-        if (!hayEspacio(pos, bote.getTamaño(), bote.isHorizontal())) {
-            return false;
-        }
+
         if (bote.isHorizontal()) {
             if (y + tamaño < TAMAÑO_TABLERO) {
                 for (int i = y; i < y + tamaño; i++) {
@@ -265,7 +280,7 @@ public class Tablero {
             }
         }
 
-        return ok;
+        return pos;
     }
 
 }

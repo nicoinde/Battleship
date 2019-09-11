@@ -14,7 +14,6 @@ public abstract class Estrategia {
     //modo de busqueda 0->Seek; 1->Destroy
     int sizeX,sizeY;
     int[][] oponente;
-    int[][] miTablero;
     boolean lastShootHit, init,done=false;;
     int lastShootX=0,lastShootY=0;
     public Estrategia(){
@@ -22,12 +21,13 @@ public abstract class Estrategia {
         init=false;
         sizeX=100;
         sizeY=100;
+        
         oponente=new int[sizeX][sizeY];
-        miTablero=new int[sizeX][sizeY];
+
         for (int i = 0; i < 100; i++) {
             for (int j = 0; j < 100; j++) {
                 oponente[i][j]=0;
-                miTablero[i][j]=0;
+
             }
         }
         
@@ -36,11 +36,9 @@ public abstract class Estrategia {
         lastShootHit=false;
         init=false;
         oponente=new int[x][y];
-        miTablero=new int[x][y];
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
                 oponente[i][j]=0;
-                miTablero[i][j]=0;
             }
         }
         
