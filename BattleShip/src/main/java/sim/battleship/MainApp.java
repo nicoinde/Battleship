@@ -50,9 +50,10 @@ public class MainApp extends Application {
 
         
         //INICIALIZANDO PARA VENTANA DE JUEGO
+        VentanaJuego ventanaJuego= new VentanaJuego();
         layoutMenuJuego = new VBox(20);
         btnPopUp=new Button("Pop it up!");
-        btnPopUp.setOnAction(e->VentanaJuego.display("Trying", "And not Dying"));
+        btnPopUp.setOnAction(e->ventanaJuego.display("Trying", "And not Dying"));
         btnSalir = new Button("Salir");
         btnSalir.setOnAction(e -> {
             window.setScene(ventPrincipal);
@@ -73,4 +74,15 @@ public class MainApp extends Application {
         launch(args);
     }
 
+    
+    ///////////////////////ACA EMPIEZA LA LOGICA DEL CONTROLADOR DEL JUEGO   //////////////////////////
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
